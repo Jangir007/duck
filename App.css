@@ -1,0 +1,838 @@
+:root {
+  --color-primary: #FBC02D;
+  --color-secondary: #008080;
+  --color-bg: #F8F9FA;
+  --color-text: #1A1D20;
+  --good-color: #F6F5F0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--good-color);
+  font-family: sans-serif;
+  color: var(--color-text);
+}
+
+/* Шапка приложения */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0 24px;
+  height: 64px;
+  border-bottom: 2px solid #f1f3f5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Логотип */
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-emoji {
+  font-size: 28px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+}
+
+.logo-dot {
+  color: var(--color-primary);
+}
+
+/* Ссылки навигации */
+.navbar-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #5c636a;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  color: var(--color-secondary);
+  background-color: rgba(0, 128, 128, 0.05);
+}
+
+/* Стиль для активной страницы */
+.nav-item.active {
+  color: var(--color-secondary);
+  background-color: rgba(0, 128, 128, 0.08);
+}
+
+/* Правый блок (Авторизация и Стрик) */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.streak-badge {
+  background-color: rgba(251, 192, 45, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #e6ac00;
+  border: 1px solid rgba(251, 192, 45, 0.2);
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* Основной контент под шапкой */
+.content {
+  max-w: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Welcome */
+
+/* Контейнер для формы и результата (если хочешь отцентровать на странице) */
+.contact-container {
+  max-w: 450px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: sans-serif;
+}
+
+/* Стили самой формы */
+.contact-form {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 2px solid #f1f3f5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Лейбл (Сенің атың кім?) */
+.contact-form label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Поле ввода (Инпут) */
+.contact-form input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  font-size: 16px;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+/* Фокус на инпуте при клике */
+.contact-form input:focus {
+  border-color: var(--color-secondary);
+}
+
+/* Кнопка отправки (Жіберу) */
+.submit-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.95;
+}
+
+/* Эффект нажатия на кнопку */
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Блок с приветствием после отправки */
+.greeting-card {
+  margin-top: 20px;
+  background-color: rgba(0, 128, 128, 0.06);
+  border: 2px dashed var(--color-secondary);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  animation: popIn 0.3s ease-out;
+}
+
+/* Текст приветствия */
+.greeting-card h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.4;
+}
+
+/* Анимация появления карточки */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Контейнер для формы и результата (если хочешь отцентровать на странице) */
+.contact-container {
+  max-w: 450px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: sans-serif;
+}
+
+/* Стили самой формы */
+.contact-form {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 2px solid #f1f3f5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Лейбл (Сенің атың кім?) */
+.contact-form label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Поле ввода (Инпут) */
+.contact-form input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  font-size: 16px;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+/* Фокус на инпуте при клике */
+.contact-form input:focus {
+  border-color: var(--color-secondary);
+}
+
+/* Кнопка отправки (Жіберу) */
+.submit-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.95;
+}
+
+/* Эффект нажатия на кнопку */
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Блок с приветствием после отправки */
+.greeting-card {
+  margin-top: 20px;
+  background-color: rgba(0, 128, 128, 0.06);
+  border: 2px dashed var(--color-secondary);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  animation: popIn 0.3s ease-out;
+}
+
+/* Текст приветствия */
+.greeting-card h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.4;
+}
+
+/* Анимация появления карточки */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Стили для картинки персонажа */
+.img {
+  width: 100%;          /* Уменьшили ширину */
+  height: 500px;         /* Задали фиксированную высоту */
+  object-fit: contain;   /* Картинка не будет сжиматься или искажаться */
+  animation: floatPet 4s ease-in-out infinite;
+}
+
+/* На мобилках сделаем его еще чуть компактнее */
+@media (max-width: 768px) {
+  .img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Grammar */
+
+/* Общий контейнер для грамматического блока */
+.grammar {
+  max-w: 800px;
+  margin: 32px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  border: 2px solid #f1f3f5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
+  font-family: sans-serif;
+}
+
+/* Главный заголовок темы */
+.grammar-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--color-primary);
+  display: inline-block;
+}
+
+/* Заголовки каждого падежа */
+.grammar-under-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-top: 28px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Добавим маленькую декоративную точку перед каждым падежом для стиля */
+.grammar-under-title::before {
+  content: "•";
+  color: var(--color-primary);
+  font-size: 24px;
+}
+
+/* Блок с окончаниями */
+.okonchaniya {
+  margin: 0 0 8px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  background-color: rgba(0, 128, 128, 0.06);
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Блок с примерами (Мысалы) */
+.examples {
+  margin: 0 0 24px 20px;
+  font-size: 15px;
+  color: #5c636a;
+  font-style: italic;
+}
+
+/* Разделительная линия между падежами, кроме последнего */
+.grammar-under-title:not(:of-type(1)) {
+  border-top: 1px dashed #e9ecef;
+  padding-top: 24px;
+}
+
+.ToDoList-title {
+  text-align: underline;
+}
+
+.red-text {
+  color: red;
+}
+
+/* Контейнер страницы */
+.vocabulary-page {
+  max-w: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: sans-serif;
+}
+
+/* Верхняя панель (Заголовок + Поиск) */
+.vocabulary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f3f5;
+}
+
+.vocabulary-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.vocabulary-subtitle {
+  font-size: 14px;
+  color: #7d8590;
+  margin: 0;
+}
+
+/* Поле поиска (SearchBar) */
+.search-input {
+  width: 100%;
+  max-w: 300px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--color-secondary);
+}
+
+/* Сетка для карточек слов */
+.word-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Карточка слова (VocabularyCard) */
+.word-card {
+  background-color: #ffffff;
+  border: 2px solid #f1f3f5;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.word-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Текст внутри карточки */
+.word-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.word-kaz {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-secondary);
+}
+
+.word-rus {
+  font-size: 15px;
+  font-weight: 600;
+  color: #5c636a;
+}
+
+/* Адаптивность под мобильные устройства */
+@media (max-width: 768px) {
+  .vocabulary-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .search-input {
+    max-w: 1000px;
+  }
+
+  .word-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  
+  .word-card {
+    padding: 16px;
+  }
+
+  .word-kaz {
+    font-size: 18px;
+  }
+
+  .word-rus {
+    font-size: 13px;
+  }
+}
+
+/* Заголовок задания */
+.ToDoList-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.red-text {
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.06);
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-right: 6px;
+}
+
+/* Список отправленных предложений */
+.grammar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grammar li {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideIn 0.2s ease-out;
+}
+
+/* Иконка-галочка перед каждым предложением */
+.grammar li::before {
+  content: "✅";
+  font-size: 14px;
+}
+
+/* Поле ввода (Инпут) */
+.grammar input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid #e9ecef;
+  font-size: 15px;
+  color: var(--color-text);
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.grammar input[type="text"]:focus {
+  border-color: var(--color-secondary);
+}
+
+/* Кнопка (Отправить) */
+.grammar button {
+  width: 100%;
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.grammar button:hover {
+  opacity: 0.95;
+}
+
+.grammar button:active {
+  transform: scale(0.99);
+}
+
+/* Анимация появления новых пунктов */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Контейнер страницы аудирования */
+.page {
+  max-w: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+/* Главный заголовок */
+.title {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+/* Стили для рядов с кнопками */
+.row-1, .row-2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Ссылка-обертка (чтобы убрать дефолтное подчеркивание ссылок) */
+.test-link {
+  text-decoration: none;
+  flex: 1;
+  max-width: 220px;
+}
+
+/* Стили огромных игровых кнопок для тестов */
+.test-button {
+  width: 100%;
+  background-color: #ffffff;
+  color: var(--color-secondary);
+  border: 2px solid #e9ecef;
+  border-bottom: 5px solid #e9ecef; /* Объемный 3D эффект */
+  padding: 24px 16px;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+/* Эффект наведения (Hover) */
+.test-button:hover {
+  border-color: var(--color-primary);
+  border-bottom-color: #e6ac00;
+  color: var(--color-text);
+  background-color: rgba(251, 192, 45, 0.05);
+}
+
+/* Эффект нажатия (Active) — кнопка физически "вжимается" вниз */
+.test-button:active {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+
+/* Адаптивность для мобильных телефонов */
+@media (max-width: 480px) {
+  .row-1, .row-2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .test-link {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .test-button {
+    padding: 18px 16px;
+    font-size: 16px;
+  }
+}
+
+/* Контейнер страницы задания */
+.page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Адаптивный видеоплеер */
+.test-ifame {
+  width: 100%;
+  max-height: 450px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок задания */
+.test-title {
+  font-size: 20px;
+  color: var(--color-text);
+  margin: 10px 0;
+}
+
+/* Список ответов */
+.test-ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.test-ul li {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+/* Поле ввода */
+.test-input {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.test-input:focus {
+  border-color: var(--color-secondary);
+}
+
+/* Кнопка */
+.test-button {
+  padding: 14px;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.test-button:hover {
+  opacity: 0.9;
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 600px) {
+  .test-ifame {
+    height: 250px;
+  }
+}
+
+/* Стили для текста задания */
+.test-text {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 32px;
+  
+  /* Типографика */
+  font-size: 18px;
+  line-height: 1.8; /* Делает текст очень удобным для чтения */
+  color: #334155;
+  font-family: 'Georgia', serif; /* Классический книжный шрифт */
+  
+  /* Оформление карточки */
+  background-color: #ffffff;
+  border-radius: 20px;
+  border-left: 6px solid var(--color-primary); /* Акцентная полоса слева */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  
+  /* Работа с текстом */
+  text-align: justify; /* Равнение по ширине для строгого вида */
+}
+
+/* Адаптивность для мобильных телефонов */
+@media (max-width: 600px) {
+  .test-text {
+    font-size: 16px;
+    padding: 20px;
+    line-height: 1.6;
+  }
+}
+
+.textarea {
+  width: 100%;
+    max-width: 600px;
+    height: 250px;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 2px solid #e9ecef;
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical; /* Позволяет пользователю менять высоту мышкой */
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
